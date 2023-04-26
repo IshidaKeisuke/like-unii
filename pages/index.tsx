@@ -1,12 +1,15 @@
-import type { Liff } from "@line/liff";
 import type { NextPage } from "next";
+import liff from "@line/liff";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
+const Home: NextPage<{ liff: typeof liff | null; liffError: string | null }> = ({
   liff,
   liffError
 }) => {
+  console.log(liff);
+console.log(liffError)
+
   return (
     <div>
       <Head>
@@ -14,7 +17,6 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <h1>create-liff-app</h1>
         {liff && <p>LIFF init succeeded.</p>}
