@@ -7,8 +7,6 @@ const Home: NextPage<{ liff: typeof liff | null; liffError: string | null }> = (
   liff,
   liffError
 }) => {
-  console.log(liff);
-console.log(liffError)
 
   return (
     <div>
