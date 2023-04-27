@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-/documents/hasura_metadata_2023_04_26_21_45_09_071.json
-/hasura
 
 # testing
 /coverage

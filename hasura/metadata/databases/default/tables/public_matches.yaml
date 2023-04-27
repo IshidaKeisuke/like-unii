@@ -1,0 +1,10 @@
+table:
+  name: matches
+  schema: public
+object_relationships:
+  - name: company
+    using:
+      foreign_key_constraint_on: companies_id
+  - name: user
+    using:
+      foreign_key_constraint_on: users_id

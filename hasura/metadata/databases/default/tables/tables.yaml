@@ -1,0 +1,4 @@
+- "!include public_companies.yaml"
+- "!include public_interviews.yaml"
+- "!include public_matches.yaml"
+- "!include public_users.yaml"
