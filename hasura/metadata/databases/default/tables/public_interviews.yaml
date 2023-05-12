@@ -4,4 +4,4 @@ table:
 object_relationships:
   - name: company
     using:
-      foreign_key_constraint_on: companies_id
+      foreign_key_constraint_on: company_id

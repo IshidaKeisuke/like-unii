@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
   const [liffObject, setLiffObject] = useState<typeof liff | null>(null);
   const [liffError, setLiffError] = useState<string | null>(null);
-  const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
+  const liffId = process.env.NEXT_PUBLIC_LIFF_ID as string;
+  const [isInClient, setIsInClient] = useState<boolean | null>(null);
 
   // Execute liff.init() when the app is initialized
   useEffect(() => {
@@ -23,16 +24,22 @@ function MyApp({ Component, pageProps }: AppProps) {
           .init({ liffId })
           .then(() => {
             setLiffObject(liff);
+            setIsInClient(liff.isInClient());
+
           })
           .catch((error: Error) => {
             setLiffError(error.toString());
           });
       });
+
   }, [liffId]);
 
-  // Provide `liff` object and `liffError` object
-  // to page component as property
-  return <Component {...pageProps} liff={liffObject} liffError={liffError} />;
+  if (isInClient) {
+    return <Component {...pageProps} liff={liffObject} liffError={liffError} />;
+  } else {
+    return <div>外部ブラウザからはアクセスできません。</div>;
+  }
+
 }
 
 export default MyApp;

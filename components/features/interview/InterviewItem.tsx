@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Interview } from "@/types/index";
 import { Card, CardContent, CardActions } from '@mui/material';
-import { CustomButton } from "../ui/Button";
-import { TypoGraphy } from "../ui/Typography";
+import { CustomButton } from "../../ui/CustomButton";
+import { TypoGraphy } from "../../ui/Typography";
 
 interface Props {
   interview: Interview;
@@ -15,8 +16,9 @@ export const InterviewCard = ({ interview }: Props) => {
         <TypoGraphy variant="body2" title={interview.description} />
       </CardContent>
       <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <CustomButton size="small" variant="contained" color="primary" title="Action 1" />
-        <CustomButton size="small" variant="contained" title="Action 2" />
+        <Link href={`/interview/${interview.id}`}>
+          <CustomButton size="small" variant="contained" color="primary" title="応募する" />
+        </Link>
       </CardActions>
     </Card>
   );

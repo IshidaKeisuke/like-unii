@@ -1,6 +1,6 @@
-import { InterviewCard } from "@/components/interview/InterviewItem";
+import { InterviewCard } from "@/components/features/interview/InterviewItem";
 import { NextPage } from "next";
-import { getAllInterviews } from "@/lib/hasura/interviews";
+import { getAllInterviews } from "@/utils/hasura/interview";
 import { Interview } from "@/types/index";
 
 interface Props {

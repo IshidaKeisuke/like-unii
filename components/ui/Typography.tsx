@@ -1,14 +1,10 @@
-import { Typography, TypographyProps } from '@mui/material';
+import { Typography, TypographyProps } from "@mui/material";
 
 interface TypoProps extends TypographyProps {
-  title: string
+  title: string;
 }
 
 export const TypoGraphy = (props: TypoProps) => {
   const { title, ...typographyProps } = props;
-  return(
-    <Typography {...typographyProps}>
-      {title}
-    </Typography>
-  )
-}
+  return <Typography {...typographyProps}>{title}</Typography>;
+};

@@ -5,14 +5,14 @@ array_relationships:
   - name: interviews
     using:
       foreign_key_constraint_on:
-        column: companies_id
+        column: company_id
         table:
           name: interviews
           schema: public
   - name: matches
     using:
       foreign_key_constraint_on:
-        column: companies_id
+        column: company_id
         table:
           name: matches
           schema: public
