@@ -16,7 +16,7 @@ export const InterviewCard = ({ interview }: Props) => {
         <TypoGraphy variant="body2" title={interview.description} />
       </CardContent>
       <CardActions sx={{ justifyContent: 'flex-end' }}>
-        <Link href={`/interview/${interview.id}`}>
+        <Link href={`/interview/${interview.id}`} as={`/interview/${interview.id}`}>
           <CustomButton size="small" variant="contained" color="primary" title="応募する" />
         </Link>
       </CardActions>
