@@ -39,7 +39,7 @@ const InterviewConfirm: NextPage<Props> = ({liff, interview}) => {
       }
     };
     initializeLiff();
-  }, [router, lineId, company_id]);
+  }, [router, liff]);
 
   const handleApply = async () => {
     setIsLoading(true);
